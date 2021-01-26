@@ -5,12 +5,8 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
-    [
-      "babel-plugin-styled-components",
-      {
-        "pure": true
-      }
-    ],
+    "@emotion/babel-plugin",
+    "react-refresh/babel",
     "@babel/plugin-transform-runtime"
   ]
 }

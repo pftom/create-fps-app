@@ -1,18 +1,10 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-const createStyledComponentsTransformer = require("typescript-plugin-styled-components")
-  .default;
-
-const styledComponentsTransformer = createStyledComponentsTransformer();
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
-  entry: "./src/index.tsx",
-  devtool: "inline-source-map",
-  devServer: {
-    contentBase: "./dist",
+  entry: {
+    app: "./src/index.tsx",
   },
   module: {
     rules: [
@@ -29,14 +21,13 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.tsx?$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         use: "babel-loader",
       },
     ],
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin(),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: "My First React App",
@@ -47,7 +38,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
   },
 };
