@@ -28,3 +28,11 @@ $ cd appName && npm start
 ```
 
 > 注意：在脚手架初始化时就已经安装了依赖了，所以不需要再次安装依赖。
+
+## ❤️致谢
+
+此项目搭建吸收了来自诸多优秀项目的想法：
+
+- [create-ink-app](https://github.com/vadimdemedes/create-ink-app) ：脚手架的搭建大量参考了此项目
+- [ink](https://github.com/vadimdemedes/ink) & [pastel](https://github.com/vadimdemedes/pastel) ：搭建脚手架的想法在于偶尔发现这两个项目
+- [create-react-app](https://github.com/facebook/create-react-app)：脚手架中关于文件处理与依赖安装的代码参考了此项目
